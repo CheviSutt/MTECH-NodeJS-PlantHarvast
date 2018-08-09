@@ -1,0 +1,26 @@
+Create a ‘Plant’ class that extends EventEmitter
+The ‘Plant’ class show have two variables:
+size - a number
+hasBeenPlanted - a boolean
+An instantiated plant object should respond to 4 events
+The ‘plantSeed’ event should set the plant’s size to 1 and set hasBeenPlanted to true, only the first time it is emitted
+The ‘water’ and ‘bugAttack’ events should:
+Increase and decrease the plant’s size respectively every time they are emitted, as long as the seed has already been planted
+Print out an error if the seed has not yet been planted
+The ‘harvest’ event should print out the current size of the plant and remove all listeners from the plant
+
+
+myPlant.emit('harvest');
+myPlant.emit('bugAttack');
+myPlant.emit('plantSeed');
+myPlant.emit('water');
+myPlant.emit('bugAttack');
+myPlant.emit('error', new Error('whoops!'));
+myPlant.emit('water');
+myPlant.emit('water');
+myPlant.emit('water');
+myPlant.emit('plantSeed');
+myPlant.emit('harvest');
+myPlant.emit('water');
+myPlant.emit('bugAttack');
+myPlant.emit('bugAttack');
